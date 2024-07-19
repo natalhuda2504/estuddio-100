@@ -1,0 +1,88 @@
+<!-- Contact Section -->
+<section id="contact" class="contact section">
+
+<!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Contato</h2>
+        <p>Escolha um canal para entrar em contato ou deixe sua mensagem no formulário abaixo</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+            <div class="col-lg-6">
+
+                <div class="row gy-4">
+                    <div class="col-md-6">
+                        <div class="info-item" data-aos="fade" data-aos-delay="200">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <h3>Todas as localidades</h3>
+                        </div>
+                    </div><!-- End Info Item -->
+
+                    <div class="col-md-6">
+                        <div class="info-item" data-aos="fade" data-aos-delay="300">
+                        <i class="fa-solid fa-phone"></i>
+                        <h3>Telefone</h3>
+                        <p>+55 19 99387-2442</p>                
+                        </div>
+                    </div><!-- End Info Item -->
+
+                    <div class="col-md-6">
+                        <div class="info-item" data-aos="fade" data-aos-delay="400">
+                        <i class="fa-regular fa-envelope"></i>
+                        <h3>E-mail</h3>
+                        <p>contato&#64;estuddio100com</p>
+                        <p>vendas&#64;estuddio100.com</p>
+                        </div>
+                    </div><!-- End Info Item -->
+
+                    <div class="col-md-6">
+                        <div class="info-item" data-aos="fade" data-aos-delay="500">
+                        <i class="fa-regular fa-clock"></i>
+                        <h3>Horário de Atendimento</h3>
+                        <p>Segunda - Sexta</p>
+                        <p>9:00 - 17:00</p>
+                        </div>
+                    </div><!-- End Info Item -->
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" method="post" class="email-form" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row gy-4">
+
+                        <div class="col-md-6">
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Nome" ngModel required>                
+                        </div>
+
+                        <div class="col-md-6 ">
+                        <input type="email" id="email" class="form-control" name="email" placeholder="Endereço de e-mail" ngModel required>
+                        </div>
+
+                        <div class="col-md-12">
+                        <input type="text" id="title" class="form-control" name="title" placeholder="Título da Mensagem" ngModel required>
+                        </div>
+
+                        <div class="col-md-12">
+                        <textarea class="form-control" id="message" name="message" rows="6" placeholder="Mensagem" ngModel required></textarea>
+                        </div>
+
+                        <div class="col-md-12 text-center">
+                        <div *ngIf="loading" class="loading">Carregando...</div>
+                        <div *ngIf="error" class="error-message">Ocorreu um erro. Tente novamente, por favor.</div>
+                        <div *ngIf="success" class="sent-message">Mensagem enviada. Obrigado!</div>
+
+                        <button type="submit" [disabled]="contactForm.invalid">Enviar Mensagem</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div><!-- End Contact Form -->
+
+        </div>
+
+    </div>
+
+</section><!-- /Contact Section -->
